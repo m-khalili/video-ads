@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        applicationId "com.mk.adsApp"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 101
+        versionName "1.0.1"
+        setProperty("archivesBaseName","AdsApp${versionName}")
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+//    implementation 'com.google.android.exoplayer:exoplayer-core:2.11.1'
+//    implementation 'com.google.android.exoplayer:exoplayer-ui:2.11.1'
+//    implementation 'com.google.android.exoplayer:extension-ima:2.11.1'
+//    implementation 'com.google.android.exoplayer:exoplayer:2.10.4'
+
+    implementation 'com.google.android.gms:play-services-ads:19.6.0'
+//    implementation 'com.google.ads.interactivemedia.v3:interactivemedia:3.14.0'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.12.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.12.1'
+    implementation 'com.google.android.exoplayer:extension-ima:2.12.1'
+    implementation 'com.google.android.exoplayer:exoplayer:2.12.1'
+
+}
